@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .repository {
+            display: flex;
+            width: 100%;
+            border: 1px solid black;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .full_name {
+            font-weight: bold;
+        }
+        .created_at {
+            align-self: center;
+        }
+    </style>
+  </head>
+
+  <body>
+    <label for="usernameInput">GitHub Username:</label>
+    <input type="text" id="usernameInput" value="barblebee">
+    <button id="submitButton">Submit</button>
+
+    <div id="userRepositoryList">
+      <!-- user repository list injected here -->
+    </div>
+  </body>
+
+  <script async src="index.js"></script>
+</html>
