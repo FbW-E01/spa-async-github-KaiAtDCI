@@ -10,6 +10,7 @@ async function fetchUserRepos(username) {
 
 async function injectUserRepos(userRepos) {
     const element = document.querySelector('#userRepositoryList');
+    element.innerHTML = '';
     userRepos.forEach(repository => {
         const template = `
           <div class="repository">
