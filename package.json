@@ -1,1 +1,21 @@
-{}
+{
+  "name": "spa-async-github-kaiatdci",
+  "description": "### Github Username API",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FbW-E01/spa-async-github-KaiAtDCI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FbW-E01/spa-async-github-KaiAtDCI/issues"
+  },
+  "homepage": "https://github.com/FbW-E01/spa-async-github-KaiAtDCI#readme",
+  "dependencies": {
+  }
+}

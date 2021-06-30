@@ -13,7 +13,7 @@ async function injectUserRepos(userRepos) {
     element.innerHTML = '';
     userRepos.forEach(repository => {
         const template = `
-          <div class="repository">
+          <div class="repository list-group-item">
             <div class="wrapper">
               <span class="full_name">${repository.full_name}</span>
               <span class="description">${repository.description}</span>
@@ -25,11 +25,23 @@ async function injectUserRepos(userRepos) {
     })
 }
 
+
 const submitButton = document.querySelector('#submitButton');
 submitButton.addEventListener('click', () => {
     const username = document.querySelector('#usernameInput').value;
     fetchUserRepos(username)
-        .then(injectUserRepos);
+        .then(injectUserRepos)
+        .then(() => {
+            const listItems = document.getElementsByClassName('repository');
+            for (let listItem of listItems) {
+                listItem.addEventListener('mouseenter', (event) => {
+                    event.target.classList.add("active");
+                });
+                listItem.addEventListener('mouseleave', (event) => {
+                    event.target.classList.remove("active");
+                });
+            }
+        });
 })
 
 
