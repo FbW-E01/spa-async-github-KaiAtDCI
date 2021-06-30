@@ -1,6 +1,7 @@
 async function fetchUserRepos(username) {
     try {
         const response = await fetch(`https://api.github.com/users/${username}/repos`);
+        // console.log(response.json());
         return await response.json()
     } catch (error) {
         console.warn(error);
@@ -13,18 +14,17 @@ async function injectUserRepos(userRepos) {
     element.innerHTML = '';
     userRepos.forEach(repository => {
         const template = `
-          <div class="repository list-group-item">
+          <a href="${repository.html_url}" class="repository list-group-item">
             <div class="wrapper">
               <span class="full_name">${repository.full_name}</span>
               <span class="description">${repository.description}</span>
             </div>
             <span class="created_at">${repository.created_at}</span>
-          </div>
+          </a>
         `
         element.insertAdjacentHTML('beforeend', template);
     })
 }
-
 
 const submitButton = document.querySelector('#submitButton');
 submitButton.addEventListener('click', () => {
